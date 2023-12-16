@@ -1,0 +1,66 @@
+# ColorChanger
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Color Change</h1>
+    </header>
+    
+    <main>
+        <p>Lets Change Color.</p>
+        <button id="changeColorBtn">Change Color</button>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to change the background color of the <main> element
+            function changeColor() {
+                const mainElement = document.querySelector('main');
+                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                mainElement.style.backgroundColor = randomColor;
+            }
+
+            // Event listener for the button click
+            const changeColorBtn = document.getElementById('changeColorBtn');
+            changeColorBtn.addEventListener('click', changeColor);
+        });
+    </script>
+</body>
+</html>
